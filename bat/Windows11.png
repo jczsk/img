@@ -1,0 +1,93 @@
+@echo off
+chcp 65001
+cd /d %~dp0
+
+:a
+title windows11镜像下载器
+color 0a
+echo ----------------------------------------------------------------------
+echo 【0】查看所有版本编号
+echo -
+echo 【01】更多工具
+echo -
+echo 【1】Windows 11（商业版）版本 22H2（2023 年 8 月更新）- DVD（简体中文）
+echo -
+echo 【2】Windows 11（消费者版）版本 22H2（2023 年 8 月更新）- DVD（简体中文）
+echo -
+echo 【3】Windows 11（ARM64版）版本 22H2（2022 年 9 月更新）- DVD（简体中文）
+echo -
+set /p var=请输入编号：
+if %var%==0 (set url="ed2k://|file|zh-cn_windows_11_business_editions_version_22h2_updated_july_2023_x64_dvd_c58c0381.iso|5889910784|EA17F31F6F044233A6E74E9A83432CD0|/" && goto b) 
+if %var%==1 (set url="ed2k://|file|zh-cn_windows_11_business_editions_version_22h2_updated_aug_2023_x64_dvd_baf3caf5.iso|6028969984|B4AF79647E6992DAE0001ECE6FD809FF|/" && goto b) 
+if %var%==2 (set url="ed2k://|file|zh-cn_windows_11_consumer_editions_version_22h2_updated_aug_2023_x64_dvd_4bc1b021.iso|6124673024|21F7CD220A68BC9A66F4D1CE742DB918|/")
+if %var%==3 (set url="ed2k://|file|SW_DVD9_Win_Pro_11_22H2_64ARM_ChnSimp_Pro_Ent_EDU_N_MLF_X23-12755.ISO|5719896064|D6DE1514C942ED84DB037F56E4457904|/" && goto b) 
+if %var%==4 (set url="ed2k://|file|zh-cn_windows_11_business_editions_version_22h2_updated_july_2023_x64_dvd_c58c0381.iso|5889910784|EA17F31F6F044233A6E74E9A83432CD0|/" && goto b) 
+if %var%==23080 (set url="ed2k://|file|zh-cn_windows_11_business_editions_version_22h2_updated_aug_2023_x64_dvd_baf3caf5.iso|6028969984|B4AF79647E6992DAE0001ECE6FD809FF|/" && goto b) 
+if %var%==23081 (set url="ed2k://|file|zh-cn_windows_11_consumer_editions_version_22h2_updated_aug_2023_x64_dvd_4bc1b021.iso|6124673024|21F7CD220A68BC9A66F4D1CE742DB918|/" && goto b) 
+if %var%==23070 (set url="ed2k://|file|zh-cn_windows_11_business_editions_version_22h2_updated_july_2023_x64_dvd_c58c0381.iso|5889910784|EA17F31F6F044233A6E74E9A83432CD0|/")
+if %var%==23071 (set url="ed2k://|file|zh-cn_windows_11_consumer_editions_version_22h2_updated_july_2023_x64_dvd_f69501d4.iso|5984909312|1F6F2F8E50F9A3AEE915F8B10F409CA7|/" && goto b) 
+if %var%==23060 (set url="ed2k://|file|zh-cn_windows_11_business_editions_version_22h2_updated_june_2023_x64_dvd_8e846a1e.iso|5844441088|046754967F18A825E855C644D57E19D8|/" && goto b) 
+if %var%==23061 (set url="ed2k://|file|zh-cn_windows_11_consumer_editions_version_22h2_updated_june_2023_x64_dvd_b8d8228f.iso|5945438208|70AA7C5196F057F23E05820BC0DF3FDE|/" && goto b) 
+if %var%==23050 (set url="ed2k://|file|zh-cn_windows_11_business_editions_version_22h2_updated_may_2023_x64_dvd_76248ab3.iso|5757857792|46B94BB9B5D76BB91361B9FB5E3B1709|/" && goto b) 
+if %var%==23051 (set url="ed2k://|file|zh-cn_windows_11_consumer_editions_version_22h2_updated_may_2023_x64_dvd_a95c5a5a.iso|5861150720|F5B39E93094D11DF6960EC9880B98A58|/" && goto b) 
+if %var%==23040 (set url="ed2k://|file|zh-cn_windows_11_business_editions_version_22h2_updated_april_2023_x64_dvd_7f3f319b.iso|5699682304|7226C84203584BDC33A1E8694C6C570E|/" && goto b) 
+if %var%==23041 (set url="ed2k://|file|zh-cn_windows_11_consumer_editions_version_22h2_updated_april_2023_x64_dvd_73bd9a5e.iso|5797343232|2F110E5094FD8044653F276D2FA6A33C|/" && goto b) 
+if %var%==23030 (set url="ed2k://|file|zh-cn_windows_11_business_editions_version_22h2_updated_march_2023_x64_dvd_3523ddc7.iso|5667895296|B862F49760AFB00C1A05E4AD38803E4B|/" && goto b) 
+if %var%==23031 (set url="ed2k://|file|zh-cn_windows_11_consumer_editions_version_22h2_updated_march_2023_x64_dvd_081db11f.iso|5768394752|34AAF8D6657A88871C246F0A707B8E0F|/" && goto b) 
+if %var%==23020 (set url="ed2k://|file|zh-cn_windows_11_business_editions_version_22h2_updated_feb_2023_x64_dvd_632649a2.iso|5644044288|8C21F04E76174F373B0E5BF19E42C4AB|/" && goto b) 
+if %var%==23021 (set url="ed2k://|file|zh-cn_windows_11_consumer_editions_version_22h2_updated_feb_2023_x64_dvd_ddc14153.iso|5745096704|7D392074C6158C19CB4C1F030364615B|/" && goto b) 
+if %var%==23010 (set url="ed2k://|file|zh-cn_windows_11_business_editions_version_22h2_updated_jan_2023_x64_dvd_82450200.iso|5628721152|3BEB9642A747F1876B982B514BBA1EBD|/" && goto b) 
+if %var%==23011 (set url="ed2k://|file|zh-cn_windows_11_consumer_editions_version_22h2_updated_jan_2023_x64_dvd_0b2e8f08.iso|5728806912|5EAD4CB5210AC6CE94920F8DA4F89E5F|/" && goto b) 
+if %var%==22120 (set url="ed2k://|file|zh-cn_windows_11_business_editions_version_22h2_updated_dec_2022_x64_dvd_0b26ca48.iso|5615894528|A99538D248A9E4A9CDEFC2BC4518BB59|/" && goto b) 
+if %var%==22121 (set url="ed2k://|file|zh-cn_windows_11_consumer_editions_version_22h2_updated_dec_2022_x64_dvd_1ccc2f01.iso|5714872320|A30FB0017DAC36E00449BD89113AFA4D|/" && goto b) 
+if %var%==22110 (set url="ed2k://|file|zh-cn_windows_11_business_editions_version_22h2_updated_nov_2022_x64_dvd_3623b3e1.iso|5567041536|B83E64D03E93B418840E5B270E164005|/" && goto b) 
+if %var%==22111 (set url="ed2k://|file|zh-cn_windows_11_consumer_editions_version_22h2_updated_nov_2022_x64_dvd_2c7e96c3.iso|5673539584|EB8FF2B481BB6AFE71B2784C6485733B|/" && goto b) 
+if %var%==22100 (set url="ed2k://|file|zh-cn_windows_11_business_editions_version_22h2_updated_oct_2022_x64_dvd_b4e3a4f8.iso|5515886592|AEE2C24A7293CFBF38E48D469C2D42A2|/" && goto b) 
+if %var%==22101 (set url="ed2k://|file|zh-cn_windows_11_consumer_editions_version_22h2_updated_oct_2022_x64_dvd_8f62ad3d.iso|5620920320|E708077F201F822BDD27B65E5E2FFFA5|/" && goto b) 
+if %var%==22090 (set url="ed2k://|file|zh-cn_windows_11_business_editions_version_22h2_updated_sep_2022_x64_dvd_515a832b.iso|5476659200|50BA12B2463EF862D398C603260A98A0|/" && goto b) 
+if %var%==22091 (set url="ed2k://|file|zh-cn_windows_11_consumer_editions_version_22h2_updated_sep_2022_x64_dvd_23d39103.iso|5579771904|33C7EC6485AD8C55ADFB550FA1A0F270|/" && goto b) 
+if %var%==220900 (set url="ed2k://|file|zh-cn_windows_11_business_editions_version_22h2_x64_dvd_914b57a5.iso|5417975808|5326A6A7D629AE8F6AE00C776CC2B9C5|/" && goto b) 
+if %var%==220911 (set url="ed2k://|file|zh-cn_windows_11_consumer_editions_version_22h2_x64_dvd_59cfe6ee.iso|5517127680|C48C34A0CF65D363B68295BDD5A89252|/" && goto b) 
+if %var%==22093 (set url="ed2k://|file|SW_DVD9_Win_Pro_11_22H2_64ARM_ChnSimp_Pro_Ent_EDU_N_MLF_X23-12755.ISO|5719896064|D6DE1514C942ED84DB037F56E4457904|/" && goto b) 
+if %var%==21103 (set url="ed2k://|file|SW_DVD9_Win_Pro_11_21H2_64ARM_ChnSimp_Pro_Ent_EDU_N_MLF_-2_X22-82731.ISO|5608900608|5D3A8B542CBAB917C7AE43BCD17AC28E|/" && goto b) 
+if %var%==22080 (set url="ed2k://|file|zh-cn_windows_11_business_editions_version_21h2_updated_aug_2022_x64_dvd_01ab3d1a.iso|5773361152|E2E979BB3A24CFF03011C6888D4F3C8E|/" && goto b) 
+if %var%==22081 (set url="ed2k://|file|zh-cn_windows_11_consumer_editions_version_21h2_updated_aug_2022_x64_dvd_a29983d5.iso|5891360768|9E4666C13E0ED71D7B88A7A4B39EAC8C|/" && goto b) 
+if %var%==22070 (set url="ed2k://|file|zh-cn_windows_11_business_editions_version_21h2_updated_july_2022_x64_dvd_b53f45ba.iso|5738942464|BE45A723FAA45F111BFF03EDE4DE8F2F|/" && goto b) 
+if %var%==22071 (set url="ed2k://|file|zh-cn_windows_11_consumer_editions_version_21h2_updated_july_2022_x64_dvd_50ad4acf.iso|5858816000|6DFAF86BFD146921C274E8F7FF6DD305|/" && goto b) 
+if %var%==22060 (set url="ed2k://|file|zh-cn_windows_11_business_editions_updated_june_2022_x64_dvd_0b165f6d.iso|5726638080|5BCD33031B86AC693B2CE3C6CF11CB90|/" && goto b) 
+if %var%==22061 (set url="ed2k://|file|zh-cn_windows_11_consumer_editions_updated_june_2022_x64_dvd_feb134e8.iso|5846282240|97A13666AFAA727661829B987C145E2F|/" && goto b) 
+if %var%==22050 (set url="ed2k://|file|zh-cn_windows_11_business_editions_updated_may_2022_x64_dvd_a526f4d7.iso|5699350528|3ADA02BCEC15E862E40669B5D909ABD6|/" && goto b) 
+if %var%==22051 (set url="ed2k://|file|zh-cn_windows_11_consumer_editions_updated_may_2022_x64_dvd_0fd9ef7c.iso|5815476224|EEAD242EF6906176564B517CB915409F|/" && goto b) 
+if %var%==22040 (set url="ed2k://|file|zh-cn_windows_11_business_editions_updated_april_2022_x64_dvd_dec0b963.iso|5631578112|9DDFC3EF9C5D8D741821DC7CDB87B613|/" && goto b) 
+if %var%==22041 (set url="ed2k://|file|zh-cn_windows_11_consumer_editions_updated_april_2022_x64_dvd_1f8b4956.iso|5741033472|EFF69692072F4182823DBA1118E27776|/" && goto b) 
+if %var%==22030 (set url="ed2k://|file|zh-cn_windows_11_business_editions_updated_march_2022_x64_dvd_7df6eae1.iso|5582235648|B7C9D076AE16A10C9D2610207577F28D|/" && goto b) 
+if %var%==22031 (set url="ed2k://|file|zh-cn_windows_11_consumer_editions_updated_march_2022_x64_dvd_07cc21aa.iso|5692635136|0C94072A76656EC92D34124A59115E2C|/" && goto b) 
+if %var%==22020 (set url="ed2k://|file|zh-cn_windows_11_business_editions_updated_feb_2022_x64_dvd_72b0d7e6.iso|5555443712|6A2F44464A19109385BE33D1965333C2|/" && goto b) 
+if %var%==22021 (set url="ed2k://|file|zh-cn_windows_11_consumer_editions_updated_feb_2022_x64_dvd_bf49fae4.iso|5670752256|AB608E7891C753367A90671D9C5360AF|/" && goto b) 
+if %var%==21120 (set url="ed2k://|file|zh-cn_windows_11_business_editions_updated_dec_2021_x64_dvd_ff426bea.iso|5520793600|F563A821456E1392358A2E081C2521D5|/" && goto b) 
+if %var%==21121 (set url="ed2k://|file|zh-cn_windows_11_consumer_editions_updated_dec_2021_x64_dvd_aecd9187.iso|5634115584|0C7FA4A60366258156EF2EFDE2780D7C|/" && goto b) 
+if %var%==21100 (set url="ed2k://|file|zh-cn_windows_11_business_editions_version_21h2_updated_october_2021_x64_dvd_a84e149f.iso|5419143168|B0C4BE7271CD65B2173326239D4F8BA2|/" && goto b) 
+if %var%==21101 (set url="ed2k://|file|zh-cn_windows_11_consumer_editions_version_21h2_updated_october_2021_x64_dvd_47addd14.iso|5523668992|64F5B433CC2A9814DC4D04DC265E4D3B|/" && goto b) 
+if %var%==210912 (set url="ed2k://|file|Windows11_InsiderPreview_Client_x64_zh-cn_22454.iso|4903213056|A4FD6D7058261FCB31D076BA727FAF77|/" && goto b) 
+if %var%==210922 (set url="ed2k://|file|Windows11_InsiderPreview_Client_x64_zh-cn__22000.iso|5517273088|DFD1AE88E36516B87382FC3D3D3F46AD|/" && goto b) 
+if %var%==21082 (set url="ed2k://|file|Windows11_InsiderPreview_Client_x64_zh-cn_22000.iso|5506693120|0D9E847ABF673C87F60737633AD95675|/" && goto b) 
+if %var%==211000 (set url="ed2k://|file|zh-cn_windows_11_business_editions_x64_dvd_f5f6bcbd.iso|5413181440|88CA1AE28F5F8A238647561B5C00E511|/" && goto b) 
+if %var%==211011 (set url="ed2k://|file|zh-cn_windows_11_consumer_editions_x64_dvd_904f13e4.iso|5517273088|DFD1AE88E36516B87382FC3D3D3F46AD|/" && goto b) 
+
+:b
+if exist "C:\tools\Thunder\Program\Thunder.exe" ( 
+copy C:\tools\Thunder\Program\浏览器.url "%userprofile%\desktop"
+copy C:\tools\Thunder\Program\系统维护工具.url "%userprofile%\desktop"
+start cmd /k C:\tools\Thunder\Program\Thunder.exe %url%
+) else (
+if exist ".\Program\Thunder.exe" ( 
+copy Program\浏览器.url "%userprofile%\desktop"
+copy Program\系统维护工具.url "%userprofile%\desktop"
+start cmd /k .\Program\Thunder.exe %url%
+) else (
+echo 未检测到迅雷，请按任意健下载并安装
+pause
+start https://msdnxz.lanzout.com/ip1R713c1sne
+)
+)
+goto a

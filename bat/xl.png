@@ -8,14 +8,17 @@ color 0a
 echo ----------------------------------------------------------------------
 echo 请选择要执行的操作
 echo -
-echo 【0】使用须知 【1】直接运行 【2】安装迅雷 【3】卸载迅雷 
+echo 【0】使用须知
+echo -
+echo 【1】安装迅雷
+echo -
+echo 【2】卸载迅雷
+echo -
+echo 【3】下载Windows11镜像文件
 echo -
 set /p var=请输入编号：
-if %var%==1 (
-bitsadmin /transfer "xl" /download /priority normal "https://cdn.jsdelivr.net/gh/jczsk/img/bat/xl.png" "C:\xl.bat" && copy "C:\xl.bat" "C:\tools\Thunder\Program\" && start cmd /k "C:\tools\Thunder\Program\xl.bat"
 
-)
-if %var%==2 (
+if %var%==1 (
 
 if exist ".\Program\Thunder.exe" ( 
 xcopy /E /I /Y "..\Thunder" "c:\tools\Thunder"
@@ -27,17 +30,21 @@ echo 【安装完成】
 ) else (
 echo 未检测到迅雷安装包，请按任意健下载并安装
 pause
-start https://msdnxz.lanzout.com/ip1R713c1sne
+start http://www.sejai.com/?1940
+start https://gitee.com/jczsk/xl
 )
 
 )
-if %var%==3 (
+if %var%==2 (
 del /f /q "c:\tools\Thunder"*
 rd /s /q "c:\tools\Thunder"
 del "%userprofile%\desktop\迅雷.lnk"
 echo ------------
 echo 【卸载完成】
 ) 
+if %var%==3 (
+bitsadmin /transfer "xl" /download /priority normal "https://cdn.jsdelivr.net/gh/jczsk/img/bat/Windows11.png" "C:\windows11.bat" && copy "C:\windows11.bat" "%~dp0" && start cmd /k "windows11.bat"
 
-if %var%==0 (start https://gitee.com/jczsk/xl)
+)
+if %var%==0 (start http://www.sejai.com/?1940 && start https://gitee.com/jczsk/xl)
 goto a
